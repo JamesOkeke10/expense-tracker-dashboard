@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Analytics</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <ul>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="transactions.html">Transactions</a></li>
+      <li class="active"><a href="overall.html">Analytics</a></li>
+      <li><a href="#" onclick="logout()">Logout</a></li>
+    </ul>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <div class="topbar">
+      <h2>Analytics</h2>
+      <p id="welcomeUser"></p>
+    </div>
+
+    <!-- SUMMARY -->
+    <div class="summary">
+      <div class="card income">
+        <h3>Total Income</h3>
+        <p id="totalIncome">$0</p>
+      </div>
+
+      <div class="card expense">
+        <h3>Total Expenses</h3>
+        <p id="totalExpense">$0</p>
+      </div>
+
+      <div class="card balance">
+        <h3>Balance</h3>
+        <p id="balance">$0</p>
+      </div>
+    </div>
+
+    <!-- CHARTS -->
+    <div class="card">
+  <h3>Expense Breakdown</h3>
+  <div class="chart-container">
+    <canvas id="categoryChart"></canvas>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Monthly Trend</h3>
+  <div class="chart-container">
+    <canvas id="trendChart"></canvas>
+  </div>
+</div>
+
+    <!-- INSIGHTS -->
+    <div class="card">
+      <h3>Insights</h3>
+      <ul id="insightsList"></ul>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="js/analytics.js"></script>
+</body>
+</html>

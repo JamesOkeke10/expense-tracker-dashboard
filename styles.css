@@ -1,0 +1,310 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY DEFAULT (FOR DASHBOARD PAGES) */
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0f172a;
+}
+
+/* ========================= */
+/* 🔐 LOGIN PAGE ONLY */
+/* ========================= */
+
+body.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: radial-gradient(circle at top, #1e293b, #020617);
+}
+
+.login-container {
+  width: 100%;
+  max-width: 420px;
+  padding: 50px 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  text-align: center;
+  color: white;
+}
+
+#loginForm,
+#registerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ========================= */
+/* 🧱 LAYOUT */
+/* ========================= */
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 240px;
+  background: #020617;
+  color: #94a3b8;
+  padding: 25px 15px;
+  position: fixed;
+  height: 100%;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.sidebar li {
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.sidebar li:hover,
+.sidebar .active {
+  background: #1e293b;
+  color: #fff;
+}
+
+/* MAIN FULL WIDTH */
+.main {
+  margin-left: 240px;
+  padding: 30px 50px;
+  background: #f1f5f9;
+  min-height: 100vh;
+  width: calc(100% - 240px);
+}
+
+/* ========================= */
+/* TOPBAR */
+/* ========================= */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+#welcomeUser {
+  color: #64748b;
+}
+
+/* ========================= */
+/* CARDS */
+/* ========================= */
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  margin-bottom: 20px;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card h3 {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.card p {
+  font-size: 26px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* COLORS */
+.balance { border-left: 6px solid #3b82f6; }
+.income { border-left: 6px solid #22c55e; }
+.expense { border-left: 6px solid #ef4444; }
+
+/* ========================= */
+/* FORM */
+/* ========================= */
+
+form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+form input,
+form select {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+form button {
+  grid-column: span 3;
+  padding: 14px;
+  border-radius: 10px;
+  background: #3b82f6;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+/* ========================= */
+/* TABLE */
+/* ========================= */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  font-size: 12px;
+  color: #64748b;
+}
+
+td {
+  padding: 12px 0;
+}
+
+tr {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* DELETE */
+.delete-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#insightsList {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+#insightsList li {
+  margin-bottom: 8px;
+  color: #334155;
+}
+
+.chart-container {
+  height: 300px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ========================= */
+/* 📱 RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 1024px) {
+  .summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  form button {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .sidebar ul {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .main {
+    margin-left: 0;
+    padding: 20px;
+    width: 100%;
+  }
+
+  .summary {
+    grid-template-columns: 1fr;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  form button {
+    grid-column: span 1;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filters input,
+.filters select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+/* DASHBOARD CHART */
+.chart-container {
+  height: 280px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Make chart responsive on small screens */
+@media (max-width: 768px) {
+  .chart-container {
+    max-width: 100%;
+    height: 250px;
+  }
+}

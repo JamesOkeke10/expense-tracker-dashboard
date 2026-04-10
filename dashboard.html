@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <ul>
+  <li><a href="dashboard.html">Dashboard</a></li>
+  <li><a href="transactions.html">Transactions</a></li>
+  <li><a href="overall.html">Analytics</a></li>
+  <li><a href="#" onclick="logout()">Logout</a></li>
+</ul>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- TOP -->
+    <div class="topbar">
+      <h2>Dashboard</h2>
+      <p id="welcomeUser"></p>
+    </div>
+
+    <!-- SUMMARY -->
+    <div class="summary">
+      <div class="card balance">
+        <h3>Balance</h3>
+        <p id="balance">$0</p>
+      </div>
+
+      <div class="card income">
+        <h3>Income</h3>
+        <p id="income">$0</p>
+      </div>
+
+      <div class="card expense">
+        <h3>Expenses</h3>
+        <p id="expense">$0</p>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="card">
+      <h3>Add Transaction</h3>
+      <form id="transactionForm">
+        <input type="date" id="date" required>
+
+        <select id="type">
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
+
+        <input type="text" id="category" placeholder="Category" required>
+        <input type="number" id="amount" placeholder="Amount" required>
+        <input type="text" id="description" placeholder="Description">
+
+        <button type="submit">Add Transaction</button>
+      </form>
+    </div>
+
+    <!-- CHART -->
+    <div class="card">
+  <h3>Spending Overview</h3>
+
+  <div class="chart-container">
+    <canvas id="categoryChart"></canvas>
+  </div>
+
+</div>
+    <!-- TABLE -->
+    <div class="card">
+      <h3>Recent Transactions</h3>
+      <table id="transactionsTable">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Description</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>
